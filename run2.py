@@ -67,7 +67,7 @@ for (email, password), videos in video_distribution.items():
         driver.find_element(By.CSS_SELECTOR, ".svg-inline--fa.fa-upload.fa-2x").click()
         time.sleep(5)
         driver.find_element(By.CSS_SELECTOR, "input[name='videoInput']").send_keys(video_path)
-         time.sleep(2)
+        time.sleep(2)
         driver.find_element(By.CSS_SELECTOR, "input[type='title']").send_keys(kw)
         time.sleep(20)
         driver.find_element(By.ID, "thumbnailButton").click()
