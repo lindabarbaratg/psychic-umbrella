@@ -75,6 +75,7 @@ for (email, password), videos in video_distribution.items():
         driver.find_element(By.CSS_SELECTOR, "textarea[id='description']").send_keys(konten)
         time.sleep(5)
         driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
-        time.sleep(50)
+        time.sleep(7)
+        print("Berhasil Upload : "+title)
 
     driver.quit()  # Tutup browser setelah semua video terupload untuk akun ini
