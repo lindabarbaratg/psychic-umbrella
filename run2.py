@@ -2,7 +2,7 @@ import csv
 import random
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
+import os
 import time
 
 # Fungsi membaca CSV
@@ -57,12 +57,17 @@ for (email, password), videos in video_distribution.items():
 
         2025 Updated! Today, you'll be able to download and preview all content from {title} in just a few clicks.
         '''
+
+        
+
+        video_path = os.path.abspath("video/video.mp4")
         
         driver.get("https://old.bitchute.com/channel/")
         time.sleep(3)
         driver.find_element(By.CSS_SELECTOR, ".svg-inline--fa.fa-upload.fa-2x").click()
         time.sleep(5)
-        driver.find_element(By.NAME, "videoInput").send_keys("video/video.mp4")
+        driver.find_element(By.CSS_SELECTOR, "input[name='videoInput']").send_keys(video_path)
+         time.sleep(2)
         driver.find_element(By.CSS_SELECTOR, "input[type='title']").send_keys(kw)
         time.sleep(20)
         driver.find_element(By.ID, "thumbnailButton").click()
