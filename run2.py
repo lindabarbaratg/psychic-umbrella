@@ -2,9 +2,7 @@ import csv
 import random
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+
 import time
 
 # Fungsi membaca CSV
@@ -36,7 +34,7 @@ for i in range(extra_videos):
 # Proses upload
 for (email, password), videos in video_distribution.items():
     # Inisialisasi WebDriver
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    driver = webdriver.Chrome()
     driver.get("https://old.bitchute.com/channel/")
     time.sleep(3)
 
